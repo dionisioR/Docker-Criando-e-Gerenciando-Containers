@@ -2,11 +2,72 @@ https://www.docker.com/
 https://docs.docker.com/desktop/install/windows-install/
 https://learn.microsoft.com/pt-br/windows/wsl/install
 
+https://hub.docker.com
+https://hub.docker.com/_/hello-world
+
 Cadastro:
 rbddionis......[Ver anotação]
 
+HELP
+>>> docker run --help
+
 Depois de configurado:
-- Testando o Docker
+- Testando o Docker [criando um container basico]
 -- Abra o Power Shew como administrador
 -- digite o seguinte comando>
 >>> docker run hello-world
+
+
+Criando um container com UBUNTU
+>>> docker run ubuntu
+
+Comandos
+- Exibe quais containers estão em execução
+>>> docker ps
+>>> docker container ls
+>>> docker ps -a [exibe com mais detalhes]
+>>> docker container ls -a [exibe com mais detalhes]
+
+Para a execução do container
+>>> docker stop id_do_container
+
+Volta a executar o container
+>>> docker start id_do_container
+
+Criando uma interação com o container
+>>> docker exec -it id_do_container bash
+
+Pausa a execução do container
+>>> docker pause id_do_container
+
+Volta a executar o container 
+>>> docker unpause id_do_container
+
+Remove o container
+>>> docker rm id_do_container
+
+Cria um container já no modo interativo
+>>> docker run -it ubuntu bash
+
+Criando uma container com uma página estática
+>>> docker run -d dockersamples/static-site
+>>> [-d] vai criar o container deixando ativo sem travar o terminal
+>>> [OBS.: Não será possível executar o site]
+
+Criando uma container com uma página estática executável
+>>> docker run -d -P dockersamples/static-site
+>>> [-P] Vair criar o container deixando ativo sem  travar e vai mapear uma porta dizendo que a porta 80 foi mapeada para a porta ***
+>>> Para ver qual é a porta mapeada digite o comando:
+>>> docker port id_do_container
+>>> Para abrir a aplicação digite http://localhost:porta_mapeada [em nosso exemplo>>> http://localhost:32768/]
+
+Direcionando o container para uma porta específica
+>>> docker run -d -p 8080:80 dockersamples/static-site
+>>> [-p 8080:80]  fazendo com que a porta 8080 da minha máquina reflita na porta 80 do container [http://localhos: 8080]
+
+
+Parando e removendo o container de modo forçado
+>>> docker rm id_do_container --force
+
+
+
