@@ -1,0 +1,12 @@
+https://www.docker.com/
+https://docs.docker.com/desktop/install/windows-install/
+https://learn.microsoft.com/pt-br/windows/wsl/install
+
+Cadastro:
+rbddionis......[Ver anotação]
+
+Depois de configurado:
+- Testando o Docker
+-- Abra o Power Shew como administrador
+-- digite o seguinte comando>
+>>> docker run hello-world
